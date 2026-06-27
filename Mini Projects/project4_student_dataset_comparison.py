@@ -1,4 +1,6 @@
-print("STUDENTS MARK ANALYSIS PROJECT - DATASET 1")
+print("=" * 70)
+print("      STUDENT DATASET COMPARISON SYSTEM")
+print("=" * 70)
 
 import numpy as np
 np.random.seed(42)
@@ -17,7 +19,9 @@ for row in data:
 
 # ------------------ DATASET 2 ------------------
 
-print("\nSTUDENTS MARK ANALYSIS PROJECT - DATASET 2 ")
+print("\n" + "=" * 70)
+print("DATASET 2")
+print("=" * 70)
 
 Students_names = [
     "Aarav", "Aadhya", "Ishaan", "Diya", "Arjun", "Nithya", "Saanvi", "Vivaan", "Riya", "Kabir",
@@ -106,8 +110,10 @@ def compare_difficulty(m1, m2, headers):
 
 # ---------------- MENU ----------------
 while True:
-    print("\nCOMPARISON OPTIONS:")
-    print("1 - Subject-wise Average")
+    print("\n" + "=" * 70)
+    print("COMPARISON MENU")
+    print("=" * 70)
+    print("1 - Subject-wise Average Comparison ")
     print("2 - Overall Average")
     print("3 - Subject Total")
     print("4 - Overall Total")
@@ -116,6 +122,7 @@ while True:
     print("7 - Pass Percentage")
     print("8 - Most Difficult Subject")
     print("9 - Exit Comparison")
+    print("=" * 70)
 
     key = int(input("Enter your choice: "))
 
@@ -144,7 +151,7 @@ while True:
         compare_difficulty(marks, marks2, headers1)
 
     elif key == 9:
-        print("Exiting comparison menu...")
+        print("\nThank you for using the Student Dataset Comparison System!")
         break
 
     else:

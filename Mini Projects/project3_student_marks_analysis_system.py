@@ -1,4 +1,6 @@
-print("STUDENTS MARK ANALYSIS PROJECT")
+print("=" * 75)
+print("              STUDENT MARK ANALYSIS SYSTEM")
+print("=" * 75)
 
 import numpy as np
 
@@ -9,50 +11,108 @@ data = np.hstack((student_ids, marks))
 
 headers = ["Student_ID", "Finance", "HR", "Marketing", "BA", "Operations"]
 
+
 def display_data():
-    print(headers)
-    for row in data:
-        print(row)
+    print("\n" + "=" * 75)
+    print("FIRST 10 STUDENTS DATASET")
+    print("=" * 75)
+
+    print(f"{headers[0]:<12}{headers[1]:>10}{headers[2]:>8}{headers[3]:>12}{headers[4]:>8}{headers[5]:>14}")
+
+    for row in data[:10]:
+        print(f"{row[0]:<12}{row[1]:>10}{row[2]:>8}{row[3]:>12}{row[4]:>8}{row[5]:>14}")
+
+    print("\nShowing first 10 records out of 100 students.\n")
+
 
 def total_marks(marks):
+    print("\n" + "=" * 75)
+    print("TOTAL MARKS")
+    print("=" * 75)
+
     total_per_student = np.sum(marks, axis=1)
     total_per_subject = np.sum(marks, axis=0)
-    print("Total mark of each student:\n", total_per_student)
-    print("Total mark of each subject:\n", total_per_subject)
+
+    print("Total Marks (First 10 Students):")
+    print(total_per_student[:10])
+
+    print("\nTotal Marks Per Subject:")
+    for subject, total in zip(headers[1:], total_per_subject):
+        print(f"{subject:<12}: {total}")
+
 
 def average_marks(marks):
+    print("\n" + "=" * 75)
+    print("AVERAGE MARKS")
+    print("=" * 75)
+
     avg_subject = np.mean(marks, axis=0)
     avg_student = np.mean(marks, axis=1)
-    print("Average marks per subject:", avg_subject)
-    print("Average marks per student:", avg_student)
+
+    print("Average Marks Per Subject")
+    for subject, avg in zip(headers[1:], avg_subject):
+        print(f"{subject:<12}: {avg:.2f}")
+
+    print("\nAverage Marks (First 10 Students)")
+    print(np.round(avg_student[:10], 2))
+
 
 def highest_lowest(marks):
+    print("\n" + "=" * 75)
+    print("HIGHEST & LOWEST MARKS")
+    print("=" * 75)
+
     highest = np.max(marks, axis=0)
     lowest = np.min(marks, axis=0)
-    print("Highest mark per subject:", highest)
-    print("Lowest mark per subject:", lowest)
+
+    for i, subject in enumerate(headers[1:]):
+        print(f"{subject:<12} Highest: {highest[i]:>3}   Lowest: {lowest[i]:>3}")
+
 
 def pass_percentage(marks):
+    print("\n" + "=" * 75)
+    print("PASS COUNT PER SUBJECT")
+    print("=" * 75)
+
     passed = marks >= 40
     pass_count = np.sum(passed, axis=0)
-    print("Pass count per subject:", pass_count)
+
+    for subject, count in zip(headers[1:], pass_count):
+        print(f"{subject:<12}: {count} Students")
+
 
 def difficult_subject(marks, headers):
+    print("\n" + "=" * 75)
+    print("MOST DIFFICULT SUBJECT")
+    print("=" * 75)
+
     avg = np.mean(marks, axis=0)
     index = np.argmin(avg)
-    print("Most difficult subject:", headers[index + 1],
-          "with average:", avg[index])
+
+    print(f"Subject : {headers[index+1]}")
+    print(f"Average : {avg[index]:.2f}")
+
 
 def rank_students(marks):
+    print("\n" + "=" * 75)
+    print("TOP 10 STUDENT RANKINGS")
+    print("=" * 75)
+
     total = np.sum(marks, axis=1)
     ranks = np.argsort(-total)
-    print("Ranking of students (0 means student 1):")
-    print(ranks)
+
+    for rank, student in enumerate(ranks[:10], start=1):
+        print(f"Rank {rank:<2} -> Student {student+1:<3} Total = {total[student]}")
+
 
 def assign_grades(marks):
-    print("Grades for each student:")
+    print("\n" + "=" * 75)
+    print("GRADE REPORT (FIRST 10 STUDENTS)")
+    print("=" * 75)
+
     total = np.sum(marks, axis=1)
-    for i, t in enumerate(total, start=1):
+
+    for i, t in enumerate(total[:10], start=1):
         if t < 100:
             grade = "D"
         elif t < 150:
@@ -61,40 +121,61 @@ def assign_grades(marks):
             grade = "B"
         else:
             grade = "A"
-        print(f"Student {i}: Total = {t}, Grade = {grade}")
+
+        print(f"Student {i:<3} Total = {t:<3} Grade = {grade}")
+
 
 def statistics(marks):
-    print("Statistics for each student:")
-    print("Median:", np.median(marks, axis=1))
-    print("Variance:", np.var(marks, axis=1))
-    print("Standard Deviation:", np.std(marks, axis=1))
+    print("\n" + "=" * 75)
+    print("STATISTICAL SUMMARY")
+    print("=" * 75)
 
-    print("\nStatistics per subject:")
-    print("Subject Median:", np.median(marks, axis=0))
-    print("Subject Variance:", np.var(marks, axis=0))
-    print("Subject Standard Deviation:", np.std(marks, axis=0))
+    print("Median (First 10 Students)")
+    print(np.median(marks, axis=1)[:10])
+
+    print("\nVariance (First 10 Students)")
+    print(np.round(np.var(marks, axis=1)[:10], 2))
+
+    print("\nStandard Deviation (First 10 Students)")
+    print(np.round(np.std(marks, axis=1)[:10], 2))
+
+    print("\nSubject Statistics")
+    for i, subject in enumerate(headers[1:]):
+        print(
+            f"{subject:<12} "
+            f"Median={np.median(marks, axis=0)[i]:>5.1f} "
+            f"Variance={np.var(marks, axis=0)[i]:>8.2f} "
+            f"Std={np.std(marks, axis=0)[i]:>7.2f}"
+        )
+
 
 def toppers_per_subject(marks, headers):
-    print("Topper per subject:")
+    print("\n" + "=" * 75)
+    print("TOPPERS PER SUBJECT")
+    print("=" * 75)
+
     for i in range(5):
         topper = np.argmax(marks[:, i])
-        print(headers[i+1], "Topper → Student", topper + 1,
-              "Mark:", marks[topper, i])
+        print(f"{headers[i+1]:<12} -> Student {topper+1:<3} Score = {marks[topper, i]}")
+
 
 display_data()
 
 while True:
-    print("\nOPTIONS")
-    print("1 - Total marks")
-    print("2 - Average")
-    print("3 - Highest & lowest")
-    print("4 - Pass percentage")
-    print("5 - Most difficult subject")
-    print("6 - Ranking students")
-    print("7 - Grade")
-    print("8 - Median, Variance, STD")
-    print("9 - Topper per subject")
-    print("10 - Exit")
+    print("\n" + "=" * 75)
+    print("MENU")
+    print("=" * 75)
+    print("1. Total Marks")
+    print("2. Average Marks")
+    print("3. Highest & Lowest Marks")
+    print("4. Pass Count")
+    print("5. Most Difficult Subject")
+    print("6. Student Ranking")
+    print("7. Grade Report")
+    print("8. Statistics")
+    print("9. Subject Toppers")
+    print("10. Exit")
+    print("=" * 75)
 
     key = int(input("Enter your choice: "))
 
@@ -117,7 +198,7 @@ while True:
     elif key == 9:
         toppers_per_subject(marks, headers)
     elif key == 10:
-        print("Exiting Student Mark Analysis Program...")
+        print("\nThank you for using the Student Mark Analysis System!")
         break
     else:
-        print("Invalid input. Try again.")
+        print("Invalid choice. Please try again.")
