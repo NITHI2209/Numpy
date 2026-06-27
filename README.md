@@ -4,19 +4,21 @@
 ![NumPy](https://img.shields.io/badge/NumPy-Scientific%20Computing-orange?logo=numpy)
 ![Status](https://img.shields.io/badge/Status-Completed-brightgreen)
 
-## 📌 Project Overview
+---
+
+# 📖 Project Overview
 
 This repository documents my hands-on learning journey with **NumPy**, the fundamental library for numerical computing in Python.
 
-It covers core NumPy concepts such as array creation, indexing, slicing, broadcasting, aggregation, matrix operations, random number generation, reshaping, and statistical analysis.
+It covers essential NumPy concepts including array creation, indexing, slicing, broadcasting, aggregation, reshaping, matrix operations, random number generation, and statistical analysis.
 
-To reinforce these concepts, I developed four real-world mini projects focused on student performance analytics using NumPy.
+To strengthen my understanding, I also developed **four real-world mini projects** that apply these concepts to student performance analysis.
 
-This repository serves as both a learning resource and a practical portfolio showcasing my NumPy skills for Data Science.
+This repository serves as both a learning resource and a practical portfolio demonstrating my NumPy skills for Data Science and Machine Learning.
 
 ---
 
-## 📚 Topics Covered
+# 📚 Topics Covered
 
 - Array Creation
 - Array Properties
@@ -26,15 +28,16 @@ This repository serves as both a learning resource and a practical portfolio sho
 - Broadcasting
 - Aggregation Functions
 - Matrix Operations
+- Matrix Transpose
 - Random Number Generation
+- Random Distributions
 - Reshaping Arrays
 - Ravel & Flatten
 - Stacking & Concatenation
-- Matrix Transpose
 
 ---
 
-## 🔧 NumPy Functions Used
+# 🛠️ NumPy Functions Used
 
 - `np.array()`
 - `np.zeros()`
@@ -61,119 +64,16 @@ This repository serves as both a learning resource and a practical portfolio sho
 - `np.random.rand()`
 - `np.random.randint()`
 - `np.random.normal()`
-- `np.random.uniform
----
-
-# 💼 Mini Projects
-
-To reinforce my understanding of NumPy, I developed four hands-on mini projects that apply array manipulation, statistical analysis, and data processing techniques to real-world student performance datasets.
+- `np.random.uniform()`
+- `numpy.linalg.inv()`
+- `numpy.linalg.det()`
 
 ---
-
-## 🎓 Project 1: Student Performance Analytics
-
-### 📌 Objective
-Analyze the academic performance of a classroom using NumPy by computing subject-wise and student-wise performance metrics.
-
-### ✨ Features
-- Calculate average marks by subject and student
-- Find highest and lowest marks for each subject
-- Identify the overall class topper
-- Count students passing each subject
-- Determine the most difficult subject
-- Rank students based on total marks
-
-### 🛠️ NumPy Concepts Used
-- Aggregation Functions
-- Boolean Indexing
-- `np.mean()`
-- `np.max()`
-- `np.min()`
-- `np.sum()`
-- `np.argmax()`
-- `np.argmin()`
-- `np.argsort()`
-
----
-
-## 📊 Project 2: Student Marks Statistical Analysis
-
-### 📌 Objective
-Perform descriptive statistical analysis on the marks of **100 students** across five academic subjects.
-
-### ✨ Features
-- Student-wise total marks
-- Student-wise mean and median
-- Variance and standard deviation
-- Subject-wise statistical analysis
-- Dataset generation using NumPy
-
-### 🛠️ NumPy Concepts Used
-- `np.arange()`
-- `np.hstack()`
-- `np.sum()`
-- `np.mean()`
-- `np.median()`
-- `np.var()`
-- `np.std()`
-
----
-
-## 💻 Project 3: Interactive Student Marks Analysis System
-
-### 📌 Objective
-Develop a menu-driven application using Python and NumPy to perform comprehensive student performance analysis.
-
-### ✨ Features
-- Display complete student dataset
-- Total and average marks
-- Highest and lowest marks
-- Student ranking
-- Grade assignment
-- Pass count analysis
-- Subject toppers
-- Median, variance and standard deviation
-- Interactive menu-based interface
-
-### 🛠️ NumPy Concepts Used
-- Aggregation Functions
-- Statistical Functions
-- Boolean Indexing
-- Ranking Algorithms
-- Array Manipulation
-- Function-Based Programming
-
----
-
-## 📈 Project 4: Comparative Student Performance Dashboard
-
-### 📌 Objective
-Compare two independent student datasets to identify performance trends and statistical differences.
-
-### ✨ Features
-- Subject-wise average comparison
-- Overall average comparison
-- Subject total comparison
-- Overall total comparison
-- Median comparison
-- Pass percentage comparison
-- Most difficult subject comparison
-- Interactive comparison menu
-
-### 🛠️ NumPy Concepts Used
-- Multi-Dataset Analysis
-- Statistical Comparison
-- Vectorized Operations
-- Aggregation Functions
-- Boolean Operations
-- Array Manipulation
-
-  ---
 
 # 📂 Repository Structure
 
 ```text
-NumPy/
+Numpy/
 │
 ├── Basics/
 │   ├── 01_theoretical.py
@@ -189,84 +89,172 @@ NumPy/
 │
 ├── Mini Projects/
 │   ├── project1_student_performance_analytics.py
-│   ├── project2_student_marks_statistical_analysis.py
+│   ├── project2_student_marks_statistics.py
 │   ├── project3_student_marks_analysis_system.py
 │   └── project4_student_dataset_comparison.py
 │
+├── images/
+│   ├── project1_output.png
+│   ├── project2_output.png
+│   ├── project3_output.png
+│   └── project4_output.png
+│
 └── README.md
 ```
+
 ---
 
-# 🎯 Skills Demonstrated
+# 🚀 Mini Projects
 
-Through this repository, I developed practical experience in:
+## 📊 Project 1 — Student Performance Analytics
 
-- Numerical Computing with NumPy
-- Array Creation and Manipulation
-- Indexing, Slicing, and Boolean Filtering
-- Vectorized Operations and Broadcasting
-- Statistical Analysis using NumPy
-- Data Aggregation and Summarization
-- Matrix Operations and Linear Algebra
-- Random Number Generation and Distributions
-- Data Reshaping and Transformation
-- Comparative Dataset Analysis
-- Educational Data Analytics
-- Problem Solving using Python and NumPy
-- Writing Clean and Modular Python Code
+### 🎯 Objective
 
-  ---
+Analyze the academic performance of 20 students across five subjects using NumPy aggregation and ranking techniques.
 
-# 🚀 Learning Outcomes
+### ✨ Features
 
-By completing this repository, I was able to:
+- Subject-wise average marks
+- Student-wise average marks
+- Highest & lowest marks per subject
+- Overall class topper
+- Pass count per subject
+- Most difficult subject
+- Student ranking
 
-- Understand NumPy fundamentals and array operations.
-- Perform efficient numerical computations using vectorization.
-- Apply statistical techniques to analyze datasets.
-- Work with multidimensional arrays and matrix operations.
-- Build practical mini projects using NumPy.
-- Strengthen problem-solving skills through real-world datasets.
-- Develop a strong foundation for Data Science, Machine Learning, and Data Analytics.
+### 🛠️ Concepts Used
 
-  ---
+- Aggregation Functions
+- Boolean Indexing
+- Statistical Analysis
+- Ranking using `np.argsort()`
 
-# ▶️ How to Run
+### 📸 Output
 
-### 1️⃣ Clone the repository
+![Project 1 Output](images/project1_output.png)
 
-```bash
-git clone https://github.com/<your-username>/<repository-name>.git
-```
+---
 
-### 2️⃣ Navigate to the project directory
+## 📈 Project 2 — Student Marks Statistics
 
-```bash
-cd <repository-name>
-```
+### 🎯 Objective
 
-### 3️⃣ Run any Python file
+Perform statistical analysis on a dataset containing marks of 100 students.
 
-```bash
-python Basics/01_theoretical.py
-```
+### ✨ Features
 
-or run any of the mini projects:
+- Student-wise statistics
+- Subject-wise statistics
+- Mean
+- Median
+- Variance
+- Standard Deviation
 
-```bash
-python "Mini Projects/project1_student_performance_analytics.py"
-```
+### 🛠️ Concepts Used
 
-> **Prerequisites**
->
-> - Python 3.x
-> - NumPy installed
+- NumPy Statistics
+- Aggregation Functions
+- Random Dataset Generation
 
-Install NumPy using:
+### 📸 Output
 
-```bash
-pip install numpy
-```
+![Project 2 Output](images/project2_output.png)
+
+---
+
+## 🏫 Project 3 — Student Marks Analysis System
+
+### 🎯 Objective
+
+Develop a menu-driven application that performs multiple student performance analyses using NumPy.
+
+### ✨ Features
+
+- Total Marks
+- Average Marks
+- Highest & Lowest Marks
+- Pass Percentage
+- Student Ranking
+- Grade Assignment
+- Subject Toppers
+- Median, Variance & Standard Deviation
+
+### 🛠️ Concepts Used
+
+- Functions
+- Menu-Driven Programming
+- NumPy Arrays
+- Statistical Operations
+
+### 📸 Output
+
+![Project 3 Output](images/project3_output.png)
+
+---
+
+## 📉 Project 4 — Student Dataset Comparison System
+
+### 🎯 Objective
+
+Compare two independent student datasets using NumPy statistical operations.
+
+### ✨ Features
+
+- Subject-wise Average Comparison
+- Overall Average Comparison
+- Subject-wise Total Comparison
+- Overall Total Comparison
+- Median Comparison
+- Pass Percentage Comparison
+- Most Difficult Subject Comparison
+
+### 🛠️ Concepts Used
+
+- Multiple Dataset Analysis
+- Statistical Comparison
+- NumPy Aggregation
+- Menu-Driven Programming
+
+### 📸 Output
+
+![Project 4 Output](images/project4_output.png)
+
+---
+
+# 💻 Skills Demonstrated
+
+- NumPy Programming
+- Array Manipulation
+- Data Processing
+- Statistical Analysis
+- Matrix Operations
+- Broadcasting
+- Problem Solving
+- Menu-Driven Python Applications
+- Clean Code Organization
+
+---
+
+# 🎯 Learning Outcomes
+
+Through this repository, I gained practical experience in:
+
+- Creating and manipulating NumPy arrays
+- Performing efficient numerical computations
+- Applying statistical analysis to real-world datasets
+- Using broadcasting and vectorized operations
+- Building analytical mini projects using NumPy
+- Writing clean, modular, and reusable Python code
+
+---
+
+# 🔮 Future Improvements
+
+- Perform analysis using Pandas
+- Visualize results with Matplotlib
+- Export reports to Excel
+- Build an interactive dashboard
+- Extend the projects using Machine Learning techniques
 
 ---
 
@@ -274,10 +262,9 @@ pip install numpy
 
 **Nithya Sree**
 
-Aspiring **Data Scientist** with a strong interest in Python, SQL, Data Analytics, and Machine Learning.
 
-- 💼 Building real-world Data Science projects
-- 🐍 Learning Python and its data science ecosystem
-- 📊 Passionate about solving problems using data
+Aspiring Data Scientist | Python | SQL | NumPy | Machine Learning
 
-⭐ If you found this repository useful, feel free to star it!
+---
+
+⭐ If you found this repository useful, consider giving it a star!
